@@ -1,0 +1,21 @@
+<div
+  class="single-post"
+  (click)="handleClick()"
+>
+  <div
+    class="single-post__container"
+    *ngIf="showId; then idBlock else userIdBlock"
+  ></div>
+
+  <ng-template #idBlock>
+    <span class="single-post__id">
+      {{ 'POSTS.SINGLE.ID' | translate }}{{ post.id }}
+    </span>
+  </ng-template>
+
+  <ng-template #userIdBlock>
+    <span class="single-post__user-id">
+      {{ 'POSTS.SINGLE.USER_ID' | translate }}{{ post.userId }}
+    </span>
+  </ng-template>
+</div>
