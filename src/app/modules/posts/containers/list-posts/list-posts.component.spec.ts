@@ -1,9 +1,9 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
 import { TranslateService } from '@ngx-translate/core';
 
-import { PostsFacade } from '@Modules/posts/store/posts.facade';
 import { Spied } from '@Specs/types/utils.type';
 
+import { PostsFacade } from '../../store/posts.facade';
 import { ListPostsComponent } from './list-posts.component';
 
 describe('ListPostsComponent', (): void => {
