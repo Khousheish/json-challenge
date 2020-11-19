@@ -1,20 +1,40 @@
-/* To learn more about this file see: https://angular.io/config/tsconfig. */
 {
   "compileOnSave": false,
   "compilerOptions": {
-    "baseUrl": "./",
+    "importHelpers": true,
     "outDir": "./dist/out-tsc",
     "sourceMap": true,
     "declaration": false,
-    "downlevelIteration": true,
-    "experimentalDecorators": true,
     "moduleResolution": "node",
-    "importHelpers": true,
+    "emitDecoratorMetadata": true,
+    "experimentalDecorators": true,
     "target": "es2015",
-    "module": "es2020",
     "lib": [
-      "es2018",
-      "dom"
-    ]
+      "es2017",
+      "dom",
+      "ES5",
+      "ES2015.Promise"
+    ],
+    "types": [
+      "node",
+    ],
+    "typeRoots": [
+      "node_modules/@types"
+    ],
+    "module": "es2020",
+    "baseUrl": "src",
+    "paths": {
+      "@AppStore": ["app/app.store"],
+      "@Components/*": ["app/shared/components/*"],
+      "@Consts/*": ["app/shared/consts/*"],
+      "@Environment": ["environments/environment"],
+      "@Interfaces/*": ["app/shared/interfaces/*"],
+      "@Modules/*": ["app/modules/*"],
+      "@Mocks/*": ["specs/mocks/*"],
+      "@Specs/*": ["specs/*"],
+      "@Pages/*": ["app/shared/pages/*"],
+      "@SharedModule": ["app/shared/shared.module"],
+      "@Types/*": ["app/shared/types/*"],
+    }
   }
 }
