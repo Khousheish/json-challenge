@@ -1,0 +1,13 @@
+<button
+  class="language-button"
+  (click)="changeLanguage()"
+>
+  {{ translateService.currentLang }}
+</button>
+
+<div class="list-posts">
+  <jc-single-post
+    *ngFor="let post of (postsFacade.posts$ | async)"
+    [post]="post"
+  ></jc-single-post>
+</div>

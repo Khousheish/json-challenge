@@ -1,0 +1,39 @@
+@import '_variables';
+
+.list-posts {
+  display: grid;
+  background-color: map-get($colors, background-white);
+  color: map-get($font-colors, font-grey);
+  gap: 1vh 1vw;
+  grid-template-columns: repeat(10, 9vw);
+  grid-template-rows: repeat(10, 9vh);
+
+  &::before {
+    padding-bottom: 100%;
+    width: 0;
+    content: '';
+    grid-row: 1 / 1;
+    grid-column: 1 / 1;
+  }
+
+  & > *:first-child {
+    grid-row: 1 / 1;
+    grid-column: 1 / 1;
+  }
+}
+
+.language-button {
+  position: absolute;
+  right: 20px;
+  margin: auto;
+  border: 0;
+  border-radius: 4px;
+  background-color: map-get($colors, background-green);
+  cursor: pointer;
+  padding: 10px 20px;
+  width: fit-content;
+  text-transform: uppercase;
+  color: map-get($font-colors, font-white);
+  font-size: 16px;
+  font-weight: 100;
+}
