@@ -1,5 +1,8 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
 
+import { MOCKED_POST } from '@Mocks/posts.mock';
+import { TranslateTestingModule } from '@Mocks/translate.mock.spec';
+
 import { SinglePostComponent } from './single-post.component';
 
 describe('SinglePostComponent', (): void => {
@@ -8,6 +11,9 @@ describe('SinglePostComponent', (): void => {
 
   beforeEach(async(): Promise<void> => {
     await TestBed.configureTestingModule({
+      imports: [
+        TranslateTestingModule,
+      ],
       declarations: [
         SinglePostComponent,
       ],
@@ -18,11 +24,18 @@ describe('SinglePostComponent', (): void => {
   beforeEach((): void => {
     fixture = TestBed.createComponent(SinglePostComponent);
     component = fixture.componentInstance;
+    component.post = MOCKED_POST;
 
     fixture.detectChanges();
   });
 
-  it('should create', (): void => {
-    expect(component).toBeTruthy();
+  describe('handleClick', (): void => {
+    it('should flip showId', (): void => {
+      component.showId = true;
+
+      component.handleClick();
+
+      expect(component.showId).toBeFalse();
+    });
   });
 });
