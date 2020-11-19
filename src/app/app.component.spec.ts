@@ -1,35 +1,40 @@
-import { TestBed } from '@angular/core/testing';
+import { ComponentFixture, TestBed } from '@angular/core/testing';
 import { RouterTestingModule } from '@angular/router/testing';
+
 import { AppComponent } from './app.component';
 
-describe('AppComponent', () => {
-  beforeEach(async () => {
+describe('AppComponent', (): void => {
+  beforeEach(async(): Promise<void> => {
     await TestBed.configureTestingModule({
       imports: [
-        RouterTestingModule
+        RouterTestingModule,
       ],
       declarations: [
-        AppComponent
+        AppComponent,
       ],
     }).compileComponents();
   });
 
-  it('should create the app', () => {
-    const fixture = TestBed.createComponent(AppComponent);
-    const app = fixture.componentInstance;
+  it('should create the app', (): void => {
+    const fixture: ComponentFixture<AppComponent> = TestBed.createComponent(AppComponent);
+    const app: AppComponent = fixture.componentInstance;
+
     expect(app).toBeTruthy();
   });
 
-  it(`should have as title 'json-challenge'`, () => {
-    const fixture = TestBed.createComponent(AppComponent);
-    const app = fixture.componentInstance;
+  it(`should have as title 'json-challenge'`, (): void => {
+    const fixture: ComponentFixture<AppComponent> = TestBed.createComponent(AppComponent);
+    const app: AppComponent = fixture.componentInstance;
+
     expect(app.title).toEqual('json-challenge');
   });
 
-  it('should render title', () => {
-    const fixture = TestBed.createComponent(AppComponent);
+  it('should render title', (): void => {
+    const fixture: ComponentFixture<AppComponent> = TestBed.createComponent(AppComponent);
     fixture.detectChanges();
-    const compiled = fixture.nativeElement;
+    // tslint:disable-next-line: no-any
+    const compiled: any = fixture.nativeElement;
+
     expect(compiled.querySelector('.content span').textContent).toContain('json-challenge app is running!');
   });
 });

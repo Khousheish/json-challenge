@@ -27,6 +27,11 @@
               "src/favicon.ico",
               "src/assets"
             ],
+            "stylePreprocessorOptions": {
+              "includePaths": [
+                "src/styles"
+              ]
+            },
             "styles": [
               "src/styles.scss"
             ],
@@ -94,6 +99,11 @@
             "styles": [
               "src/styles.scss"
             ],
+            "stylePreprocessorOptions": {
+              "includePaths": [
+                "src/styles"
+              ]
+            },
             "scripts": []
           }
         },
@@ -124,5 +134,20 @@
         }
       }
     }},
-  "defaultProject": "json-challenge"
+  "defaultProject": "json-challenge",
+  "schematics": {
+    "@schematics/angular:class": {
+      "skipTests": false
+    },
+    "@schematics/angular:component": {
+      "prefix": "jc",
+      "export": true,
+      "lintFix": true,
+      "style": "scss",
+      "changeDetection": "OnPush"
+    },
+    "@schematics/angular:directive": {
+      "prefix": "jc"
+    }
+  }
 }
